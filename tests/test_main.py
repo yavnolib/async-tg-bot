@@ -1,13 +1,8 @@
-from unittest.mock import MagicMock, patch
-
-import pytest
+from unittest.mock import patch
 
 import main
 
 
 def test_main():
-    with patch("logging.basicConfig") as mocked, patch(
-        "src.utils.main"
-    ) as mocked_main:
-        mocked_main = lambda x: res.append(0)
+    with patch("logging.basicConfig") as _, patch("src.utils.main") as _:
         assert main.main() is None

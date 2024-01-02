@@ -75,7 +75,7 @@ async def test_process_keyboard():
     update = AsyncMock()
     query = AsyncMock()
 
-    #### FIRST TEST
+    # FIRST TEST
     # test if double-click on an occupied cell
     query.data = "01"
     context.user_data = {"keyboard_state": [["."] * 3] * 3}
@@ -86,7 +86,7 @@ async def test_process_keyboard():
         == utils.FINISH_GAME
     ), "Smth went wrong when double click on an occupied cell"
 
-    #### SECOND TEST
+    # SECOND TEST
     # test if click on an occupied cell
     query.data = "01"
     update.callback_query.message.text = "blah blah"
@@ -106,7 +106,7 @@ async def test_process_keyboard():
         " Place in the free one."
     ), "Smth went wrong after click on an occupied cell"
 
-    #### THIRD TEST
+    # THIRD TEST
     # test if click on a free cell
     context.user_data["keyboard_state"][0][1] = utils.FREE_SPACE
     assert (

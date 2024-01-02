@@ -58,7 +58,8 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> int:
     keyboard = generate_keyboard(context.user_data["keyboard_state"])
     reply_markup = InlineKeyboardMarkup(keyboard)
     await update.message.reply_text(
-        f"{update.message.from_user.first_name}, your turn! Please, put X to the free place",
+        f"{update.message.from_user.first_name}, your turn!"
+        "Please, put X to the free place",
         reply_markup=reply_markup,
     )
     return CONTINUE_GAME
@@ -76,7 +77,8 @@ async def process_keyboard(update, context, query) -> int:
         await context.bot.edit_message_text(
             chat_id=update.callback_query.message.chat.id,
             message_id=update.callback_query.message.id,
-            text="You have placed a cross in an occupied cell. Place in the free one.",
+            text="You have placed a cross in an occupied cell."
+            " Place in the free one.",
             reply_markup=query.message.reply_markup,
         )
         return FINISH_GAME
@@ -127,7 +129,8 @@ async def get_winner_or_continue(update, context, query) -> int:
         reply_markup = InlineKeyboardMarkup(keyboard)
 
         await context.application.bot.sendMessage(
-            text=f"{query.from_user.first_name}, your turn! Please, put X to the free place",
+            text=f"{query.from_user.first_name}, your turn!"
+            " Please, put X to the free place",
             chat_id=update.callback_query.message.chat.id,
             reply_markup=reply_markup,
         )
@@ -258,7 +261,8 @@ def main() -> None:
         fallbacks=[CommandHandler("start", start)],
     )
 
-    # Add ConversationHandler to application that will be used for handling updates
+    # Add ConversationHandler to application
+    # that will be used for handling updates
     application.add_handler(conv_handler)
 
     # Run the bot until the user presses Ctrl-C
