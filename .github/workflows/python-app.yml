@@ -30,6 +30,7 @@ jobs:
         make init
         pip install python-telegram-bot
         pip install numpy
+        pip install pytest-asyncio
 
     - name: Lint with flake8
       run: |
