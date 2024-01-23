@@ -1,0 +1,5 @@
+2024-01-02 17:53:30,790 - telegram.ext.Application - INFO - Application started
+2024-01-02 17:53:45,200 - root - INFO - ai won
+2024-01-02 17:53:52,233 - root - INFO - player won
+2024-01-02 17:53:55,783 - telegram.ext.Application - INFO - Application is stopping. This might take a moment.
+2024-01-02 17:53:55,784 - telegram.ext.Application - INFO - Application.stop() complete
